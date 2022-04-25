@@ -1,0 +1,36 @@
+﻿@model WebApp.Models.LibroDetail
+@{
+}
+<div class="border p-3 mt-4">
+    <h4 class="text-primary">Detalle libro</h4>
+    <dl class="row">
+        <dt class="col-sm-3">Titulo:</dt>
+        <dd class="col-sm-9">@Model.Titulo</dd>
+
+        <dt class="col-sm-3">Isbn:</dt>
+        <dd class="col-sm-9">@Model.Isbn</dd>
+
+        <dt class="col-sm-3">Sinopsis:</dt>
+        <dd class="col-sm-9">@Model.Sinopsis</dd>
+
+        <dt class="col-sm-3">Nro Paginas:</dt>
+        <dd class="col-sm-9">@Model.N_Paginas</dd>
+
+        <dt class="col-sm-3">Editorial:</dt>
+        <dd class="col-sm-9">@Model.Editorial</dd>
+
+        <dt class="col-sm-3">Autores:</dt>
+        <dd class="col-sm-9">
+            <ul>
+                @foreach (var autor in Model.Autores)
+                {
+                    <li>@autor</li>
+                }
+            </ul>
+        </dd>
+    </dl>
+    <br/>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width: 150px">
+        Regresar
+    </a>
+</div>

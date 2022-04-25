@@ -1,0 +1,50 @@
+﻿@model WebApp.ViewModels.CreateLibroViewModels
+@{
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <h4 class="text-primary">Agregar libro</h4>
+        <div class="mb-3">
+            <label asp-for="Libro.Titulo"></label>
+            <input asp-for="Libro.Titulo" class="form-control" />
+            <span asp-validation-for="Libro.Titulo" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Libro.Sinopsis"></label>
+            <input asp-for="Libro.Sinopsis" class="form-control" />
+            <span asp-validation-for="Libro.Sinopsis" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Libro.N_Paginas"></label>
+            <input asp-for="Libro.N_Paginas" class="form-control" type="number" />
+            <span asp-validation-for="Libro.N_Paginas" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Libro.EditorialId"></label>
+            <select asp-for="Libro.EditorialId" class="form-control">
+                <option selected disabled="disabled">Choose...</option>
+                @foreach (var editorial in Model.Editoriales)
+                {
+                    <option value="@editorial.Id">@editorial.Nombre</option>
+                }
+            </select>
+            <span asp-validation-for="Libro.EditorialId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Libro.AutoresId"></label>
+            <select multiple="multiple" asp-for="Libro.AutoresId" class="form-control">
+                <option selected disabled="disabled">Choose...</option>
+                @foreach (var autor in Model.Autores)
+                {
+                    <option value="@autor.Id">@autor.Nombre</option>
+                }
+            </select>
+            <span asp-validation-for="Libro.AutoresId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Agregar</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width: 150px">
+            Regresar
+        </a>
+    </div>
+</form>
