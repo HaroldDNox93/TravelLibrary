@@ -1,4 +1,12 @@
 # TravelLibrary
 Prueba desarrollador .NET
 
-Projecto desarrollado con .NET5 y Arquitectura limpia usando API Key y una WebApp MVC
+Tecnológias implementadas:
+-NET 5
+-Clean Architecture
+-Rest Api
+-MVC
+-ApiKey
+-SQL Server
+
+Para la ejecución del proyecto ejecutar el scripts dentro de la carpeta SolutionItems y reemplazar el connection strings. 
